@@ -1,0 +1,16 @@
+127.0.0.1 - - [13/Jan/2020:13:38:47 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:38:53 +0530] "GET /ORSProject4/ HTTP/1.1" 200 549
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:38:54 +0530] "GET /ORSProject4/img/customLogo.jpg HTTP/1.1" 200 33775
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:38:55 +0530] "GET /ORSProject4/img/logo.png HTTP/1.1" 200 19649
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:08 +0530] "GET /ORSProject4/WelcomeCtl HTTP/1.1" 200 1695
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:09 +0530] "GET /ORSProject4/js/angular.min.js HTTP/1.1" 200 165382
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:09 +0530] "GET /ORSProject4/css/angular-datepicker.css HTTP/1.1" 200 5392
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:09 +0530] "GET /ORSProject4/js/index.js HTTP/1.1" 200 858
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:09 +0530] "GET /ORSProject4/js/angular-datepicker.js HTTP/1.1" 200 37154
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:40:09 +0530] "GET /ORSProject4/js/angular-locale_en.js HTTP/1.1" 200 2706
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:42:05 +0530] "GET /ORSProject4/WelcomeCtl HTTP/1.1" 200 1695
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:47:44 +0530] "GET /ORSProject4/LoginCtl HTTP/1.1" 200 3364
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:49:21 +0530] "GET /ORSProject4/ForgetPasswordCtl HTTP/1.1" 200 2559
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:51:35 +0530] "GET /ORSProject4/LoginCtl HTTP/1.1" 200 3364
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:52:30 +0530] "POST /ORSProject4/LoginCtl HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Jan/2020:13:52:30 +0530] "GET /ORSProject4/UserRegistrationCtl HTTP/1.1" 200 5267

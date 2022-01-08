@@ -1,0 +1,11 @@
+127.0.0.1 - - [10/Feb/2020:16:44:08 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:19 +0530] "GET /ORSProject4/jsp/raaja.jsp HTTP/1.1" 200 2676
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:20 +0530] "GET /ORSProject4/js/angular.min.js HTTP/1.1" 200 165382
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:20 +0530] "GET /ORSProject4/js/angular-datepicker.js HTTP/1.1" 200 37154
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:20 +0530] "GET /ORSProject4/js/angular-locale_en.js HTTP/1.1" 200 2706
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:21 +0530] "GET /ORSProject4/img/customLogo.jpg HTTP/1.1" 200 33775
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:21 +0530] "GET /ORSProject4/js/index.js HTTP/1.1" 200 826
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:21 +0530] "GET /ORSProject4/css/angular-datepicker.css HTTP/1.1" 200 5392
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:21 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:51 +0530] "GET /ORSProject4/WelcomeCtl HTTP/1.1" 200 1695
+0:0:0:0:0:0:0:1 - - [10/Feb/2020:16:44:51 +0530] "GET /ORSProject4/img/logo.png HTTP/1.1" 200 19649

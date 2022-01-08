@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="javadoc">
+		<item key="access" value="private"/>
+		<item key="noindex" value="false"/>
+		<item key="antpath" value="E:\ORSProject4\RemoteSystemsTempFiles\ORSProject4\javadoc.xml"/>
+		<item key="nodeprecatedlist" value="false"/>
+		<item key="use" value="true"/>
+		<item key="author" value="true"/>
+		<item key="nodeprecated" value="false"/>
+		<item key="nonavbar" value="false"/>
+		<item key="docletpath" value=""/>
+		<item key="javadoc_command_history" value="C:\Program Files\Java\jdk1.8.0_181\bin\javadoc.exe"/>
+		<item key="source" value="1.8"/>
+		<item key="version" value="true"/>
+		<item key="docletname" value=""/>
+		<item key="splitindex" value="true"/>
+		<item key="fromStandard" value="true"/>
+		<item key="notree" value="false"/>
+		<item key="destdir" value="E:\ORSProject4\RemoteSystemsTempFiles\ORSProject4\doc"/>
+		<item key="openinbrowser" value="false"/>
+		<section name="projects">
+			<section name="ORSProject4">
+				<item key="antpath" value="E:\ORSProject4\RemoteSystemsTempFiles\ORSProject4\javadoc.xml"/>
+				<item key="destdir" value="E:\ORSProject4\RemoteSystemsTempFiles\ORSProject4\doc"/>
+				<item key="href" value=""/>
+			</section>
+			<section name="Servers">
+				<item key="antpath" value="E:\ORSProject4\Servers\javadoc.xml"/>
+				<item key="destdir" value="E:\ORSProject4\Servers\doc"/>
+				<item key="href" value=""/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item key="antpath" value="E:\ORSProject4\RemoteSystemsTempFiles\javadoc.xml"/>
+				<item key="destdir" value="E:\ORSProject4\RemoteSystemsTempFiles\doc"/>
+				<item key="href" value=""/>
+			</section>
+		</section>
+	</section>
+	<section name="NewClassWizardPage">
+		<item key="create_constructor" value="false"/>
+		<item key="create_unimplemented" value="true"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="3"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item key="DIALOG_WIDTH" value="616"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_HEIGHT" value="566"/>
+		<item key="DIALOG_X_ORIGIN" value="383"/>
+		<item key="DIALOG_Y_ORIGIN" value="8"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_X_ORIGIN" value="220"/>
+			<item key="DIALOG_Y_ORIGIN" value="39"/>
+		</section>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH" value="350"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT" value="300"/>
+		<item key="GoIntoTopLevelTypeAction.isChecked" value="false"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
+	</section>
+</section>

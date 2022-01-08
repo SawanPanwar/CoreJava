@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;ORSProject4&apos;&#x0D;&#x0A;- Original project: &apos;ORSProject4&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     in.co.sunrays.proj4.test.Bubble.java&#x0D;&#x0A;     in.co.sunrays.proj4.test.ParseDate.java&#x0D;&#x0A;     in.co.sunrays.proj4.test.Random.java&#x0D;&#x0A;     in.co.sunrays.proj4.test.Revers.java" description="Delete elements" element1="/src\/main\/java&lt;in.co.sunrays.proj4.test{Revers.java" element2="/src\/main\/java&lt;in.co.sunrays.proj4.test{ParseDate.java" element3="/src\/main\/java&lt;in.co.sunrays.proj4.test{Random.java" element4="/src\/main\/java&lt;in.co.sunrays.proj4.test{Bubble.java" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1568532546308" subPackages="false" version="1.0"/>
+</session>
