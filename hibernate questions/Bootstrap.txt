@@ -1,0 +1,238 @@
+﻿What is Bootstrap
+o Bootstrap is the most popular HTML, CSS and JavaScript framework for developing a responsive and mobile friendly website.
+o It is absolutely free to download and use.
+o It is a front-end framework used for easier and faster web development.
+o It includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many others.
+o It can also use JavaScript plug-ins.
+o It facilitates you to create responsive designs.
+Why use Bootstrap
+Following are the main advantage of Bootstrap:
+o It is very easy to use. Anybody having basic knowledge of HTML and CSS can use Bootstrap.
+o It facilitates users to develop a responsive website.
+o It is compatible on most of browsers like Chrome, Firefox, Internet Explorer, Safari and Opera etc.
+
+What is a responsive website
+A website is called responsive website which can automatically adjust itself to look good on all devices, from smart phones to desktops etc.
+Bootstrap is mobile friendly: Bootstrap 3 is designed to be responsive to mobile devices.
+Mobile-first styles are part of the core framework of Bootstrap.You have to add the following <meta> tag inside the <head> element for proper rendering and touch zooming:
+1. <meta name="viewport" content="width=device-width, initial-scale=1">  
+Note: The "width=device-width" part is used to set the width of the page to follow the screen-width of the device (vary according to the devices).
+The initial-scale=1 part is used to set the initial zoom level when the page is first loaded by the browser.
+Bootstrap Container
+In Bootstrap, container is used to set the content's margins dealing with the responsive behaviors of your layout. It contains the row elements and the row elements are the container of columns (known as grid system).
+The container class is used to create boxed content.
+Containers: container is used to wrap the site contents. There are two container classes.
+o The .container class provides a responsive fixed width container.
+o The .container-fluid class provides a full width container, spanning the entire width of the viewport.
+Bootstrap Pagination
+Pagination is used to sort the web pages of your website in an organized manner. It becomes very necessary if your website has a lot of web pages.
+Following is a list of classes that Bootstrap provides to handle pagination.
+Table:
+Class
+Description
+.pagination
+Add this class to get the pagination on your page.
+.disabled,
+.active
+you can customize links by using .disabled for unclickable links and .active to indicate the current page.
+.pagination-lg,
+.pagination-sm
+use these classes to get different size items.
+1. <div class="container">  
+2.   <h2>A basic pagination example:</h2>  
+3.   <p>The .pagination class provides pagination links:</p>                    
+4.   <ul class="pagination">  
+5.     <li><a href="#">1</a></li>  
+6.     <li><a href="#">2</a></li>  
+7.     <li><a href="#">3</a></li>  
+8.     <li><a href="#">4</a></li>  
+9.     <li><a href="#">5</a></li>  
+10.   </ul>  
+11. K</div> 
+Bootstrap Navigation Bar
+A navigation bar is like a navigation header that is placed at the top of the page. You can collapse or extend it according to the screen size.
+ <nav class="navbarnavbar-default">
+<nav class="navbar navbar-inverse"> 
+The <span> tag is used to group inline-elements in a document.
+The <span> tag provides no visual change by itself.
+The <span> tag provides a way to add a hook to a part of a text or a part of a document.
+
+Button Styles
+Bootstrap provides different styles of buttons:
+Basic Default Primary Success Info Warning Danger Link
+To achieve the button styles above, Bootstrap has the following classes:
+· .btn
+· .btn-default
+· .btn-primary
+· .btn-success
+· .btn-info
+· .btn-warning
+· .btn-danger
+· .btn-link
+· <dependency>
+· 			<groupId>net.sf.jasperreports</groupId>
+· 			<artifactId>jasperreports</artifactId>
+· 			<version>6.1.0</version>
+· 		</dependency>
+· <dependency>
+· 			<groupId>net.sf.jasperreports</groupId>
+· 			<artifactId>jasperreports</artifactId>
+· 			<version>6.1.0</version>
+· 		</dependency>
+
+
+
+<SPAN TAG>:- It enhance the property of inline elemnent.
+
+Pagination :-
+<%
+String size = (String) request.getAttribute("lSize");
+inttotalCount = Integer.parseInt(size); %>
+
+<divalign="center"style="margin-top: -4%;">
+	<ulclass="pagination pagination-lg"style=" background-color: #3c763d;">
+
+<%
+int pages;
+if (totalCount % pageSize == 0)
+pages = totalCount / pageSize;
+else
+pages = (totalCount / pageSize) + 1;
+for (intcn = 1; cn<= pages; cn++) {
+%>
+<liclass=<%=(cn == pageNo) ? "disabled" : ""%>>
+<ahref="UserListCtl?pageNo=<%=cn%>"><%=cn%></a></li>
+<%
+}
+%></ul>
+
+The .dropdown class indicates a dropdown menu.
+To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and the data-toggle="dropdown" attribute.
+The .caret class creates a caret arrow icon (), which indicates that the button is a dropdown.
+Add the .dropdown-menu class to a <ul> element to actually build the dropdown menu.
+
+<liclass="dropdown"><aclass="dropdown-toggle"
+data-toggle="dropdown" href="#">Role <span class="caret"></span></a>
+
+<ulclass="dropdown-menu"><li><ahref="<%=ORSView.ROLE_CTL%>"><span
+
+class="glyphicon glyphicon-plus"></span> Add Role</a></li>
+
+<li><ahref="<%=ORSView.ROLE_LIST_CTL%>"><span
+
+class="glyphiconglyphicon-list"></span> Role List</a></li></ul></li>
+
+LOGIN :- <h1 class=”text-primary”>
+<span class=”label label-default” style=”font-size” 90%></span></h1>
+<span class="glyphiconglyphicon-book"></span>
+<span class="glyphiconglyphicon-edit"></span>
+<span class="glyphiconglyphicon-book"></span>
+<span class="glyphiconglyphicon-log-out"></span>
+SAVE :-<span class="glyphiconglyphicon-ok"></span>
+<span class="glyphiconglyphicon-refresh"></span>
+<span class="glyphiconglyphicon-list-alt"></span>
+DELETE :-<span class="glyphiconglyphicon-trash"></span>
+Technologies
+1. JDK 1.8
+2. JDBC 3.0
+3. JSP/Servlet
+4. JavaMail API 1.4.7
+5. JQuery
+6. Bootstrap:  It is set of CSS and Java Script to design look and feel of the application 
+7. Hibernate 3.0
+8. MySQL 5.x
+Tools
+1. Eclipse Mars.2
+2. SQlYog-9.0
+3. AgroUML-0.34
+4. ER Win-9.8
+5. iReport-Tibco 6.0.4 final
+
+JsperReport :-JasperReports is an open source java reporting engine. JasperReports is a Java class library, and it is meant for those Java developers who need to add reporting capabilities to their applications. There are some classes and interface is require to apply jasper report.
+What is a Report
+A report is a meaningful, well-defined, and summarized presentation of information. Usually, the routine activities are automated and data summarized into a decision-supporting "Reports". Reports represent usual messy data into charts, graphs, and other forms of graphical representations.
+Report Template
+Generally, the following layout is adopted to generate reports by most of the commercial report generating tools.
+TITLE
+PAGEHEADER
+COLUMNHEADER
+DETAIL
+COLUMNFOOTER
+PAGEFOOTER
+SUMMARY
+Following are the descriptions of each element mentioned in the diagram −
+S.NO
+Element and Description
+1
+Title
+Title contains the 'Title' of the report. It appears only once at the very beginning of the report, for example, "Tutorials Point Report."
+2
+pageHeader
+PageHeader may contain date and time information and/or organization name. This appears at the top of each page.
+3
+columnHeader
+ColumnHeader lists the names of those specific fields, which you want to display in the report, for example, "Author Name," "Starting Hour," "Finishing Hour," "Hours Worked," "Date," etc.
+4
+Detail
+Detail is the part where entries of the specific fields (listed in columnHeader) are shown, for example "Manisha", "9:00", "18:00", "9", "10.02.2013."
+5
+columnFooter
+ColumnFooter may display summation of any of the field, for example, "Total Hours Worked: "180."
+6
+pageFooter
+PageFooter may contain page count information. It appears at the bottom of each page, for example, "1/23."
+7
+Summary
+Summary contains information inferred from "detail" part, for example, after listing the number of hours, worked by each author, total hours worked by each author can be put in visual chart like pie chart, graph, etc. for better comparison.
+
+Features of JasperReports
+Some of the significant features of JasperReports are −
+· It has a flexible report layout.
+· It can present data either textually or graphically.
+· Developers can supply data in multiple ways.
+· It can accept data from the multiple data sources.
+· It can generate watermarks (A watermark is like a secondary image that is laid over the primary image).
+· It can generate sub reports.
+· It is capable of exporting reports in a variety of formats.
+
+
+
+
+
+
+
+
+
+
+Jasper Managers Classes
+There are number of classes, which will be used to compile a JRXML report design, to fill a report, to print a report, to export to PDF, HTML & XML files, view the generated reports, and report design.
+
+The list of these classes is −
+· net.sf.jasperreports.engine.JasperCompileManager − Used to compile a JRXML report template.
+· net.sf.jasperreports.engine.JasperFillManager − Used to fill a report with data from the data source.
+· net.sf.jasperreports.engine.JasperPrintManager − Used to print the documents generated by the JasperReports library.
+· net.sf.jasperreports.engine.JasperExportManager − Used to obtain PDF, HTML, or XML content for the documents produced by the report-filling process.
+· net.sf.jasperreports.view.JasperViewer − It represents a simple Java Swing application, which can load and display reports.
+· net.sf.jasperreports.view.JasperDesignViewer − Used at design time to preview the report templates.
+
+JasperReports - Life Cycle
+The main purpose of JasperReports is to create page oriented, ready to print documents in a simple and flexible manner. The following flow chart depicts a typical work flow while creating reports.
+
+As shown in the image, the life cycle has following distinct phases −
+· Designing the report − In this step we, create the JRXML file, which is an XML document that contains the definition of the report layout. We can use any text editor or iReportDesigner to manually create it. If iReportDesigner is used, the layout is designed in a visual way, hence real structure of the JRXML can be ignored.
+· Compiling the report − In this step, JRXML is compiled in a binary object called a Jasper file (*.jasper). This compilation is done for performance reasons. Jasper files are what you need to ship with your application in order to run the reports.
+· Executing the report (Filling data into the report) − In this step, data from the application is filled in the compiled report. The class net.sf.jasperreports.engine.JasperFillManager provides necessary functions to fill the data in the reports. A Jasper print file (*.jrprint) is created, which can be used either to print or export the report.
+· Exporting the report to desired format − In this step, we can export the Jasper print file created in the previous step to any format using JasperExportManager. As Jasper provides various forms of exports, hence with the same input, we can create multiple representations of the data.
+
+
+
+
+
+
+
+
+
+
+
+
+

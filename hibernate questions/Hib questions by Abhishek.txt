@@ -1,0 +1,302 @@
+﻿Q. 1 Component of My Profile.
+Ans.UserDto.java
+       Userdto.hbm.xml
+       UserModelint.java
+       Usermodelhibimpl.java
+       Usermodeljdbcimpl.java
+       MyProfileCtl.java
+       MyProfileView.jsp
+
+
+	Explain flush() method.
+Database se seriasable ko return karta he.
+Q. 2 Jasper Classes and dependencies.
+Ans.	Classes: JRDataSource;
+JasperCompileManager;
+JasperExportManager;
+JasperFillManager;
+JasperPrint;
+JasperReport;
+Dependencies:
+Jasperreport: 6.1.0
+groovy-all: 2.4.7
+
+( SELECT ROLL_NO, NAME, PHYSICS, CHEMISTRY, MATHS, (PHYSICS + CHEMISTRY + MATHS) AS Total, ROUND (((PHYSICS + CHEMISTRY + MATHS) /3), 2) AS Percentage FROM ST_MARKSHEET WHERE (PHYSICS > 45 AND CHEMISTRY >45 AND MATHS>45) ORDER BY Total DESC LIMIT 0,10)
+
+Q. 3 Page code of Add Time Table.
+Q. 4 How New Functionality add up
+Ans.
+Add database name in system. Properties file.
+Create cfg file
+ 
+ 
+Q. 5 Code of cfg.xml
+Q. 6 Object state and all methods.
+Ans:
+
+Q. 7  Diff between get() vs load().
+Ans: Both are used for retrieving object from database, But in case of get() we get original record and if no record is found than it will return NULL.
+
+In case of Load() we will get proxy object and in case if no record is found then we will get “ObjectNotFound” exception.
+
+Q. 8 Save() vs saveOrUpdate().
+Ans: Begin a unit of work and return associated transaction object.
+#Session.save à Persist the given transient instance, first assigning a generated identifier.
+#Session.save vs Session.persist à Both make the transient instance persist but “Save” return serializable object where as “Persist” return void.
+
+#Session.update vs Session.merge à At first look both update() and merge() methods seems similar because both of them are used to convert the object which is in detached state into persistence state, but the major difference between update and merge is that update method cannot be used when the same object exists in the session.
+
+Use “Update” if you are sure that session does not contain persistent object with the same identifier. In case of merge we need not worry about state of session.
+
+Q. 9 Cache levels
+Ans: First level cache is associated with “session” object. The scope of cache objects is of session. Once session is closed, cached objects are gone forever. 
+First level cache is enabled by default and you cannot disable it. 
+When we query an entity first time, it is retrieved from database and stored in first level cache associated with hibernate session. 
+If we query same object again with same session object, it will be loaded from cache and no SQL query will be executed. 
+The loaded entity can be removed from session using evict() method. 
+The next loading of this entity will again make a database call if it has been removed using evict() method.
+The whole session cache can be removed using clear() method. It will remove all the entities stored in cache. 
+(TO REDUCE THE NUMBER OF SQL QUERIES)
+
+Second level cache is apart from first level cache which is available to be used globally in session factory scope. Second level cache is created in session factory scope and is available to be used in all sessions which are created using that particular session factory. 
+It also means that once session factory is closed, all cache associated with it die and cache manager also closed down. 
+Whenever hibernate session try to load an entity, the very first place it look for cached copy of entity in first level cache (associated with particular hibernate session). If cached copy of entity is present in first level cache, it is returned as result of load method. If there is no cached entity in first level cache, then second level cache is looked up for cached entity. If second level cache has cached entity, it is returned as result of load method. But, before returning the entity, it is stored in first level cache also so that next invocation to load methhod for entity will return the entity from first level cache itself, and there will not be need to go to second level cache again. If entity is not found in first level cache and second level cache also, then database query is executed and entity is stored in both cache levels, before returning as response of load() method.(TO REDUCE DATABASE  TRAFFIC.)
+
+Q. 10 How 2nd level cache enable? Query
+Ans:   
+#For Second Level cacheà
+· Add 2 configuration setting in hibernate.cfg.xml file
+<property name= "cache.provider_class"> org.hibernate.cache.EhCacheProvider </property>
+<property name= "hibernate.cache.use_second_level_cache"> true </property>
+· Add cache usage setting in hbm file
+
+<cache usage="read-only" />  
+(Means that current session has all the permissions on object but other session can only read it.
+
+There are four ways to use second level cache. 
+<cache usage="read-only" />
+read-only: caching will work for read only operation.
+nonstrict-read-write: caching will work for read and write but one at a time.
+read-write: caching will work for read and write, can be used simultaneously.
+transactional: caching will work for transaction.
+
+Q. 11 Diff between evict (), close (), clear ().
+Ans. Evict (): Removes the object from the session. This method is used to dissociate/disconnect the specified object from the session.
+
+Clear (): When this method get called inside transaction boundary then all objects which are currently associate with particular session will be disconnected / clean or no longer associate with that Session instance. Therefore, after calling this method nothing will be performed on persistence layer or DB.
+
+Close (): Close session by calling session.close() method, means End the session and releasing the JDBC Connection and clean up.
+
+Q. 12 Criteria? How Pagination apply, setFirstResult, setMaxResults.
+Ans. 	It is an interface for retrieving entities by composing criteria objects. It is used for performing “search” operations.
+Criteria criteria = session.createCriteria(UserDTO.class);
+// if page size is greater than zero then apply pagination
+	if (pageSize >  0) {
+			pageNo = ((pageNo - 1) * pageSize) + 1;
+		criteria.setFirstResult(pageNo);
+		criteria.setMaxResults(pageSize);
+	}
+	list = criteria.list();
+
+Q. 13 Object of Criteria.
+Ans. 	Criteria criteria = session.createCriteria(TimeTableDTO.class);
+
+Q. 14 Object of session?
+Ans. 	Session session = getSessionFactory().openSession();
+
+Q. 15 2nd way to create session object.
+Ans. 
+Session session = sessionFactory.getCurrentSession();
+
+HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) resp;
+
+		HttpSession session = request.getSession(true);
+
+Q. 16 currentSession vs openSession
+Ans. It all depends on how you obtain the sessionà 
+if you use sessionFactory.getCurrentSession(), you'll obtain a "current session" which is bound to the lifecycle of the transaction and will be automatically flushed and closed when the transaction ends (commit or rollback).
+
+if you decide to use sessionFactory.openSession(), you'll have to manage the session yourself and to flush and close it "manually".
+
+Q. 17 sessionFactory?
+Ans. It is a DCP which is created by config settings in hibernate.cfg.xml. It is immutable.
+
+SessionFactory sessionFactory = new Configration().configure().buildSesionFactory();
+
+Q. 18 Hib + Boot + Jasper
+Ans. Hibernate is a object-relational mapping (ORM) tool and persistence framework that allows you to map objects (pojo) to relational database tables using (XML) configuration files.
+
+Bootstrap: it is a framework, which is a combination of html, css and java script.
+
+Jasper: it’s a reporting which generates reports.
+
+Q. 19 Jasper Tool Version and extension
+Ans. 	TIBCO Jaspersoft Studio-6.0.4.final
+		MarksheetMerit.jrxml
+
+Q. 20 Jasper Dependencies 
+Dependencies:
+Jasperreport: 6.1.0
+groovy-all: 2.4.7
+
+Q. 21 Redefine Jasper Classes
+Classes: JRDataSource;
+JasperCompileManager;
+JasperExportManager;
+JasperFillManager;
+JasperPrint;
+JasperReport;
+
+Q. 22 Bootstrap files use in project
+Ans. 	bootstrap.min.css
+bootstrap.min.js
+		jquery-1.11.0.min.js
+	
+Q. 23 How it’s Responsive. (Grid System)
+Ans. 	Bootstrap's grid system allows up to 12 columns across the page.
+Grid Classes
+The Bootstrap grid system has four classes:
+· xs (for phones - screens less than 768px wide)
+· sm (for tablets - screens equal to or greater than 768px wide)
+· md (for small laptops - screens equal to or greater than 992px wide)
+· lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+
+Q. 24 How to make table responsive.
+Ans. 	The .table-responsive class creates a responsive table. The table will then scroll horizontally on small devices (under 768px).
+Example
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+
+Q. 25 NavBar and his code.
+Ans. A navigation bar is a navigation header that is placed at the top of the page:
+With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+A standard navigation bar is created with <nav class="navbar navbar-default">.
+<nav class="navbar navbar-inverse navbar-default navbar-light		 bg-faded">
+
+Q. 26 Bootstrap Buttons and colour code
+Ans. 	Bootstrap provides different styles of buttons:
+To achieve the button styles above, Bootstrap has the following classes:
+.btn
+Grey
+.btn-default
+White
+.btn-primary
+Blue
+.btn-success
+Green
+.btn-info
+Light blue
+.btn-warning
+Orange
+.btn-danger
+Red
+.btn-link
+Hyperlink
+
+
+
+Q. 27 Hibernate cfg Root Tag. Mapping class name and parameter.
+Ans. 
+<hibernate-configuration>
+<session-factory>
+<property name="connection.url"> jdbc:mysql://localhost:3306/DEMO_ORS </property>
+<property name="connection.driver_class"> com.mysql.jdbc.Driver </property>
+<property name="connection.username">root</property>
+<property name="connection.password">root</property>
+<property name="dialect"> org.hibernate.dialect.MySQLDialect </property>
+<property name="hbm2ddl.auto">update</property>
+<property name="show_sql">true</property>
+
+<property name="connection.c3p0.min_size">10</property>
+<property name="connection.c3p0.max_size">100</property>
+<property name="connection.c3p0.acquire_increament">10</property>
+<property name="connection.c3p0.initial_pool_size">10</property>
+<property name="connection.c3p0.timeout">20000</property>
+
+<mapping resource="com/raystech/proj3/dto/UserDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/MarksheetDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/CollegeDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/StudentDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/RoleDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/CourseDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/SubjectDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/FacultyDTO.hbm.xml" />
+<mapping resource="com/raystech/proj3/dto/TimeTableDTO.hbm.xml" />
+		
+</session-factory>
+</hibernate-configuration>
+
+Q. 28 Dialect?
+Ans. 	Dialect is an interpreter which converts HQL Query to the native query.  (It depends on which dialect you are using). 
+It converts Object to SQL and SQL to Object.
+org.hibernate.dialect.MySQLDialect
+
+Q. 29 Show_sql?
+Ans. It logs all the generated SQL statements to the console.
+
+Q. 30 flush(). (automatically synchronize)
+Ans. 	Force this session to flush. Must be called at the end of a unit of work, before committing the transaction and closing the session (depending on flush-mode, Transaction.commit() calls this method). Flushing is the process of synchronizing the underlying persistent store with persistable state hold in memory.
+
+Q. 31 Primary key generation. (hbm -> generator)
+Ans. 	<id name="Id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+
+Q. 32 default value in primary key parameter -à assign
+Ans. 	"assigned”
+
+Q. 33 glyphicon?
+Ans. 	Bootstrap includes 260 glyphs from the Glyphicon Halflings set. Use glyphicons in text, buttons, toolbars, navigation, or forms:
+
+Q. 34 How to apply glyphicon?
+Ans. 
+<button class="btn btn-primary" type="submit"	name="operation" value="<%=UserCtl.OP_UPDATE%>">
+<span class="glyphicon glyphicon-ok "></span> <%= UserCtl.OP_UPDATE%></button>
+
+Q. 35 input validation -à req.set….
+Q. 36 log4j questions.
+Ans. Dependency Log4j.1.2.17
+	Development environment---	debug
+	Q. A.  Environment	---		info
+	Production ---				warn
+
+Q. 37 Design Patterns
+Ans. 	1. Front Controller Design Pattern
+Main Controller performs session checking and logging operations before calling any application controller.
+
+2. Singleton Design Pattern
+Ideally an application needs only one instance of DCP. 
+The class which have only one instance in their lifetime are called singleton classes. 
+We need only one instance of DCP in our application thus will make our class a singleton class that will contain DCP object. 
+
+There are 4 steps to make a singleton class: 
+1. Make class final so that child can't be created for single class. 
+2. Make default constructor private so that no one other class can instantiate single class.
+3. Declare a static variable of self-type in single class; static variables have only one copy in their lifetime.
+4. Make a getInstance() static method in singleton class that will return instance of same single class.
+
+3. Factory Design Pattern
+Ability to create object of another classes follows factory design pattern.
+
+4. Builder Design Pattern
+Making complex object by using simple object by step by step approach
+
+5. Bridge Design Pattern
+Single interface, which has multiple implementation.
+
+Q. 38 How do you convert request parameters into bean? 
+Ans. By populateBean() of BaseCtl. 
+
+Q. 39 How do you apply Front Controller to entire application?
+Ans. By applying wild card mapping to url.
+ 
+Q. 40 How do you apply Front Controller to entire application?
+Ans. By applying wild card mapping to url. 
+
+Q. 41 What is the responsibility of Front Controller? 
+Ans. It prevents any user to access application without login.
